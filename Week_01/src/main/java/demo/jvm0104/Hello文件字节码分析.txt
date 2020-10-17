@@ -1,0 +1,84 @@
+Classfile /Users/zqlu/MyProject/JAVA-000/Week_01/src/main/java/demo/jvm0104/Hello.class
+  Last modified 2020-10-17; size 401 bytes
+  MD5 checksum e0c3b0332a112c0a6d831617bfaf2318
+  Compiled from "Hello.java"
+public class demo.jvm0104.Hello
+  minor version: 0
+  major version: 52
+  flags: ACC_PUBLIC, ACC_SUPER
+Constant pool:
+   #1 = Methodref          #3.#14         // java/lang/Object."<init>":()V
+   #2 = Class              #15            // demo/jvm0104/Hello
+   #3 = Class              #16            // java/lang/Object
+   #4 = Utf8               <init>
+   #5 = Utf8               ()V
+   #6 = Utf8               Code
+   #7 = Utf8               LineNumberTable
+   #8 = Utf8               main
+   #9 = Utf8               ([Ljava/lang/String;)V
+  #10 = Utf8               StackMapTable
+  #11 = Class              #17            // "[Ljava/lang/String;"
+  #12 = Utf8               SourceFile
+  #13 = Utf8               Hello.java
+  #14 = NameAndType        #4:#5          // "<init>":()V
+  #15 = Utf8               demo/jvm0104/Hello
+  #16 = Utf8               java/lang/Object
+  #17 = Utf8               [Ljava/lang/String;
+{
+  public demo.jvm0104.Hello();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 3: 0
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=5, args_size=1
+         0: iconst_1                        // 将整型常量1压栈
+         1: istore_1                        // 弹栈，将栈顶值保存至局部变量表，槽位为1的位置
+         2: bipush        10                // 将整数10压栈 （取值-128~127采用bipush指令）
+         4: istore_2                        // 将栈顶值保存至局部变量表，槽位为2的位置
+         5: iconst_1                        // 将常量1压栈（boolean值用整数表示）
+         6: istore_3                        // 将栈顶值保存至局部变量表，槽位为3的位置
+         7: iconst_0                        // 将常量0压栈（int i=0）
+         8: istore        4                 // 将栈顶值保存至局部变量表，槽位为4的位置
+        10: iload         4                 // 将槽位为4的整型加在到栈
+        12: iload_2                         // 将槽位为2的整型加在到栈
+        13: if_icmpge     27                // 做if比较大小，满足继续往下执行，不满足条件，跳到槽位为27，
+        16: iload_1                         // 将槽位为1的整型加在到栈
+        17: iload         4                 // 将槽位为4的整型加在到栈
+        19: iadd                            // 讲栈上两个值相加
+        20: istore_1                        // 弹栈，将栈顶值保存至局部变量表，槽位为1的位置，也就是覆盖原来a的值
+        21: iinc          4, 1              // 将槽位为4的值做加1操作
+        24: goto          10                // 跳到槽位为10的地方去执行，也就是进行下一次循环
+        27: iload_3                         // 当i<b时候，跳到此处，加载槽位为3的元素到栈
+        28: ifeq          34                // 做if比较相等
+        31: iinc          1, 100            // 对槽位为1的元素做加100操作
+        34: return                          // 返回
+      LineNumberTable:
+        line 6: 0
+        line 7: 2
+        line 8: 5
+        line 10: 7
+        line 11: 16
+        line 10: 21
+        line 14: 27
+        line 15: 31
+        line 17: 34
+      StackMapTable: number_of_entries = 3
+        frame_type = 255 /* full_frame */
+          offset_delta = 10
+          locals = [ class "[Ljava/lang/String;", int, int, int, int ]
+          stack = []
+        frame_type = 250 /* chop */
+          offset_delta = 16
+        frame_type = 6 /* same */
+}
+SourceFile: "Hello.java"
